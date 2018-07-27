@@ -1,0 +1,17 @@
+# -*- Mode: python; c-basic-offset: 4; indent-tabs-mode: nil; tab-width: 40 -*-
+# vim: set filetype=python:
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+DIRS += ['tlsserver']
+TEST_DIRS += [
+    'test_cert_eku',
+    'test_cert_keyUsage',
+    'test_cert_trust',
+    'test_intermediate_basic_usage_constraints',
+    'test_pinning_dynamic',
+]
+
+if not CONFIG['MOZ_NO_SMART_CARDS']:
+    DIRS += ['pkcs11testmodule']
